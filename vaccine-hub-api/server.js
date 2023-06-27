@@ -2,14 +2,14 @@
 const express = require ('express')
 const morgan = require ('morgan')
 const cors = require ('cors')
+const { PORT } = require ('./config.js')
+const authRouter = require('./routes/auth')
 
 const {BadRequestError, NotFoundError} = require('./utils/errors')
 
 const app = express()
 app.use(cors())
 // app.use(morgan('tiny'))
-
-const PORT = 3000
 
 app.use((req,res,next) => {
     return next(new NotFoundError())
