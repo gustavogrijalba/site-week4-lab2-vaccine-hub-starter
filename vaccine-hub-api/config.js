@@ -1,5 +1,6 @@
 require("dotenv").config()
 require("colors")
+const bcrypt = require('bcrypt')
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001
 
